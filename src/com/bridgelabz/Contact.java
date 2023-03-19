@@ -64,6 +64,6 @@ public class Contact {
                 ", state='" + state + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
-                '}';
+                "}\n";
     }
 }
