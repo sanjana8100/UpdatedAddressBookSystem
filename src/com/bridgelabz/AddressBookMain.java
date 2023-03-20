@@ -69,7 +69,7 @@ public class AddressBookMain {
 
     public void deleteContact(){
         System.out.println("Enter the name of the address book, the contact you want to Delete exists:");
-        String name= in.nextLine();
+        String name= in.next();
 
         if(Dictionary.containsKey(name)) {
             AddressBook Temp= Dictionary.get(name);
