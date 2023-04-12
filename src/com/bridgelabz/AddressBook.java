@@ -39,7 +39,7 @@ public class AddressBook {
         System.out.println("Enter the details to add a contact:");
 
         System.out.print("Enter First Name: ");
-        String fName= in.next();
+        String fName= in.nextLine();
 
         List<Contact> duplicateName = contacts.stream().filter(contact-> contact.getFirstName().equals(fName)).toList();
         if (!(duplicateName.isEmpty())){
@@ -50,19 +50,19 @@ public class AddressBook {
         Contact contact= new Contact();
         contact.setFirstName(fName);
         System.out.print("Enter Last Name: ");
-        contact.setLastName(in.next());
+        contact.setLastName(in.nextLine());
         System.out.print("Enter the Address: ");
-        contact.setAddress(in.next());
+        contact.setAddress(in.nextLine());
         System.out.print("Enter the City: ");
-        contact.setCity(in.next());
+        contact.setCity(in.nextLine());
         System.out.print("Enter the State: ");
-        contact.setState(in.next());
+        contact.setState(in.nextLine());
         System.out.print("Enter the ZIP Code: ");
-        contact.setZip(in.next());
+        contact.setZip(in.nextLine());
         System.out.print("Enter the Phone number: ");
-        contact.setPhoneNumber(in.next());
+        contact.setPhoneNumber(in.nextLine());
         System.out.print("Enter the Email Address: ");
-        contact.setEmail(in.next());
+        contact.setEmail(in.nextLine());
 
         contacts.add(contact);
         System.out.println();

@@ -1,5 +1,9 @@
 package com.bridgelabz;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -170,6 +174,34 @@ public class AddressBookMain {
         else
             System.out.println("Given Address Book not Found!!!\n");
     }
+
+    private static void writeToFile() {
+        String path = "C:\\Users\\INS 5570\\IdeaProjects\\UpdatedAddressBookSystem\\src\\com\\bridgelabz\\AddressBook";
+        StringBuffer addressBookBuffer = new StringBuffer();
+        addressBookMap.values().stream().forEach(contact -> {
+            String personDataString = contact.toString().concat("\n");
+            addressBookBuffer.append(personDataString);
+        });
+
+        try {
+            Files.write(Paths.get(path), addressBookBuffer.toString().getBytes());
+        }
+        catch (IOException e) {
+            System.out.println("Catch block");
+        }
+    }
+
+    private static void readFromFile() {
+        String path = "C:\\Users\\INS 5570\\IdeaProjects\\UpdatedAddressBookSystem\\src\\com\\bridgelabz\\AddressBook";
+        System.out.println("Reading from : " + path + "\n");
+        try {
+            Files.lines(new File(path).toPath()).forEach(employeeDetails -> System.out.println(employeeDetails));
+        }
+        catch(IOException e){
+            System.out.println("Catch block");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program in Address Book Main class on Main Branch");
 
@@ -185,16 +217,19 @@ public class AddressBookMain {
             System.out.println("=> To Display Dictionary of Address Books: PRESS 6");
             System.out.println("=> To Display Address Books Of Contacts: PRESS 7");
             System.out.println("=> To Display Contacts in an Address Book in Sorted Order based on a specific detail: PRESS 8");
-            System.out.println("=> To EXIT: PRESS 9");
+            System.out.println("=> To Read and Display all the Contacts from the Address Book File: PRESS 9");
+            System.out.println("=> To EXIT: PRESS 10");
             int choice = in.nextInt();
 
             switch (choice) {
                 case 1:
                     addAddressBook();
+                    writeToFile();
                     System.out.println();
                     break;
                 case 2:
                     addContacts();
+                    writeToFile();
                     break;
                 case 3:
                     editContact();
@@ -213,6 +248,9 @@ public class AddressBookMain {
                     break;
                 case 8:
                     displaySortedAddressBook();
+                    break;
+                case 9:
+                    readFromFile();
                     break;
                 default:
                     status=false;

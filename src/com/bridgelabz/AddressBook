@@ -1,0 +1,4 @@
+AddressBook{contacts=[Contact{firstName='Athul', lastName='Sunil', address='GT Street', city='Delhi', state='Delhi', zip='563222', phoneNumber='9531561354', email='athul@gmail.com'}, Contact{firstName='Spoorthi', lastName='Kumar', address='HP Road', city='MAnali', state='Himachal Pradesh', zip='5465412', phoneNumber='544985413', email='spoorthi@gmail.com'}], addressBookName='Friends'}
+
+AddressBook{contacts=[Contact{firstName='Sanjana', lastName='Srinivas', address='Cottonpet', city='Kolar', state='Karnataka', zip='563101', phoneNumber='9845386475', email='sanjana@gmail.com'}, Contact{firstName='Shreyas', lastName='Margal', address='MG Road', city='Mumbai', state='Maharashtra', zip='566488', phoneNumber='9855421233', email='shreyas@gmail.com'}], addressBookName='Family'}
+
